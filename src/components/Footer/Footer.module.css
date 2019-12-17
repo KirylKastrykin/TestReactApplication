@@ -1,0 +1,10 @@
+.footer {
+    grid-area: f;
+    background-color: cornflowerblue;
+  }
+
+.footer img {
+    width: 100%;
+    height: 60px;
+    border-radius: 5px;
+  }

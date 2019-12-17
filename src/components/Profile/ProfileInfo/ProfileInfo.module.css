@@ -1,0 +1,25 @@
+img {
+  width: 1400px;
+  height: 300px;
+}
+
+.statusBlock {
+  padding: 10px;
+}
+
+.avatarBlock {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  padding: 10px;
+}
+
+.avatar {
+  padding: 10px;
+  width: 300px;
+  height: 400px;
+}
+
+.aboutMe {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+}

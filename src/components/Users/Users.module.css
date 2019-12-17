@@ -1,0 +1,11 @@
+.usersPage{
+    display: grid;
+  
+    grid-template-columns: 2fr 10fr;
+    
+  }
+
+.userPhoto {
+    width: 100px;
+    height: 100px;
+}

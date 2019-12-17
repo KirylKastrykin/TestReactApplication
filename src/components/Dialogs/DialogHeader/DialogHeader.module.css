@@ -1,0 +1,20 @@
+.dialogHeader {
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    background-color: cornflowerblue;
+    padding: 10px;
+    max-width: 500px;
+}
+
+.dialogHeaderName {
+    font-size: 120%;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.dialogHeader img {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+  }
+
