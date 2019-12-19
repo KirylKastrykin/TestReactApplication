@@ -17,9 +17,10 @@ class Navbar extends React.Component {
 
         let dropdownText;
         if (this.state.isOpened) {
-            dropdownText = <div align="right" ><div className={classes.item}>
-                <NavLink to='/profile' activeClassName={classes.activeLink}>Profile</NavLink>
-            </div>
+            dropdownText = <div align="left" >
+                <div className={classes.item}>
+                    <NavLink to='/profile' activeClassName={classes.activeLink}>Profile</NavLink>
+                </div>
                 <div className={classes.item}>
                     <NavLink to='/dialogs' activeClassName={classes.activeLink}>Dialogs</NavLink>
                 </div>
@@ -44,9 +45,12 @@ class Navbar extends React.Component {
 
             <nav className={classes.nav}>
                 <div >
-                    <img onClick={this.toggleState.bind(this)} align="left" className={classes.dropDownIcon} src={require("./../Assets/navBarDropDownIcon.png")} />
+                    <img onClick={this.toggleState.bind(this)} align="left" className={classes.dropDownIcon} src={require("./../Assets/navBarDropDownIcon.png")} >
+                    </img>
+                    <br clear="left"></br>
 
-                    {dropdownText}
+
+                    <div>{dropdownText}</div>
                 </div>
             </nav>
         )

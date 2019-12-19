@@ -19,6 +19,7 @@
     font-size: 175%;
     color: black;
     text-decoration: none;
+    /* clear: both; */
 }
 
 .item:hover {
