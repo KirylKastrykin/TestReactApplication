@@ -8,7 +8,8 @@ let mapStateToProps = (state) => {
     return {
         dialogsData: state.dialogsPage,
         newMessageText: state.dialogsPage.newMessageText,
-        dialogWith: state.dialogsPage.dialogWith
+        dialogWithID: state.dialogsPage.dialogWithID,
+        dialogWithName: state.dialogsPage.dialogWithName
     }
 }
 
@@ -19,7 +20,7 @@ let mapDispatchToProps = (dispatch) => {
             dispatch(action);
 
         },
-        onSendMessage: (message) => {
+        onSendMessage: () => {
             dispatch(sendMessageActionCreater())
 
         },

@@ -5,20 +5,21 @@ const SET_DIALOGS = "SET_DIALOGS";
 
 let initialState = {
     dialogs: [
-        { id: 1, name: "1234124" },
-        { id: 2, name: "Vlad" },
-        { id: 3, name: "Igor" },
-        { id: 4, name: "Maxim" },
-        { id: 5, name: "Liza" }
+        { id: 0, name: "1234124" },
+        { id: 1, name: "Vlad" },
+        { id: 2, name: "Igor" },
+        { id: 3, name: "Maxim" },
+        { id: 4, name: "Liza" }
     ],
-    dialogWith: "",
+    dialogWithID: 0,
+    dialogWithName: "",
 
     messages: [
-        { id: 1, message: '12515215' },
-        { id: 2, message: 'Hey2' },
-        { id: 3, message: 'Hey3' },
-        { id: 4, message: 'Hey4' },
-        { id: 5, message: 'Hey5' },
+        { id: 0, message: '12515215', fromDialog: 0, sendByMe: false},
+        { id: 1, message: 'Hey2', fromDialog: 1, sendByMe: true},
+        { id: 2, message: 'Hey3', fromDialog: 2, sendByMe: false },
+        { id: 3, message: 'Hey4', fromDialog: 3, sendByMe: false },
+        { id: 4, message: 'Hey5', fromDialog: 4, sendByMe: true },
     ],
     newMessageText: ""
 
@@ -30,7 +31,7 @@ let dialogsReducer = (state = initialState, action) => {
 
             return {
                 ...state,
-                messages: [...state.messages, { id: state.messages[state.messages.length - 1].id + 1, message: state.newMessageText }],
+                messages: [...state.messages, { id: state.messages[state.messages.length - 1].id + 1, message: state.newMessageText, fromDialog: state.dialogWithID, sendByMe: true }],
                 newMessageText: ""
 
             }
@@ -46,7 +47,8 @@ let dialogsReducer = (state = initialState, action) => {
 
             return {
                 ...state,
-                dialogWith: action.dialogID
+                dialogWithID: action.dialogID,
+                dialogWithName: action.dialogName
             }
 
         case SET_DIALOGS:
@@ -72,8 +74,8 @@ export const changeMessageTextActionCreater = (text) => {
     return { type: CHANGE_MESSAGE_TEXT, messageText: text }
 }
 
-export const changeActiveDialogActionCreater = (dialogID) => {
-    return { type: CHANGE_ACTIVE_DIALOG, dialogID: dialogID }
+export const changeActiveDialogActionCreater = (dialogID, dialogName) => {
+    return { type: CHANGE_ACTIVE_DIALOG, dialogID: dialogID, dialogName: dialogName }
 }
 
 export const setDialogsAC = (dialogs, messages, dialogWith, newMessageText) => {

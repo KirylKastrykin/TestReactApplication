@@ -7,14 +7,14 @@ import DialogItem from './DialogItem';
 let mapStateToProps = (state) => {
     return {
         dialogsData: state.dialogsPage,
-        dialogWith: state.dialogsPage.dialogWith,
+        dialogWithID: state.dialogsPage.dialogWithID,
     }
 }
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        changeActiveDialog: (dialogID) => {
-            dispatch(changeActiveDialogActionCreater(dialogID))
+        changeActiveDialog: (dialogID, dialogName) => {
+            dispatch(changeActiveDialogActionCreater(dialogID, dialogName))
         }
     }
 }

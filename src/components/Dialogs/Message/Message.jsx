@@ -6,19 +6,23 @@ const Message = (props) => {
 
     return (
         <div >
-            <div className={classes.message}>
-                {(props.id % 2 === 1) ?
-                    <div align="left" className={classes.messageToMe}>
-                        {message}
-                    </div>
-                    :
-                    <div align="right" className={classes.messageFromMe}>
-                        {message}
-                    </div>
-                }
 
-            </div>
+            {props.fromDialog == props.dialogWithID &&
+                <div className={classes.message}>
+                    {props.sendByMe ?
+                        <div align="right" className={classes.messageFromMe}>
+                            {message}
+                        </div>
+                        :
+                        <div align="left" className={classes.messageToMe}>
+                            {message}
+                        </div>
+
+                    }
+                </div>
+            }
         </div>
+
     )
 }
 

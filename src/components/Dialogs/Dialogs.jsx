@@ -20,11 +20,9 @@ const Dialogs = (props) => {
         let message = newMessageRef.current.value;
         props.updateNewMessageText(message);
     }
-    let lastMessage = props.dialogsData.messages[props.dialogsData.messages.length - 1].message;
 
-
-    let dialogsElement = props.dialogsData.dialogs.map((dialog) => <DialogItemContainer name={dialog.name} id={dialog.id} lastMessage={lastMessage} />)
-    let messagesElement = props.dialogsData.messages.map((message) => <Message message={message.message} id={message.id} />)
+    let dialogsElement = props.dialogsData.dialogs.map((dialog) => <DialogItemContainer name={dialog.name} id={dialog.id} />);
+    let messagesElement = props.dialogsData.messages.map((message) => <Message message={message.message} id={message.id} fromDialog={message.fromDialog} dialogWithID={props.dialogWithID} dialogWithName={props.dialogWithName} sendByMe={message.sendByMe} />);
 
     const checkPressedKey = () => {
         let key = window.event.keyCode;
@@ -44,9 +42,9 @@ const Dialogs = (props) => {
             <div className={classes.dialogItems}>
                 {dialogsElement}
             </div>
-            {props.dialogWith ?
+            {props.dialogWithName ?
                 <div align='center'>
-                    <DialogHeader dialogID={props.dialogsData.dialogWith} dialogs={props.dialogsData.dialogs} />
+                    <DialogHeader dialogID={props.dialogsData.dialogWithName} dialogs={props.dialogsData.dialogs} />
                     <div>
 
 
