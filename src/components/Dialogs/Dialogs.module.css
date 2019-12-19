@@ -1,7 +1,7 @@
 .dialogs{
   display: grid;
 
-  grid-template-columns: 4fr 4fr 10fr;
+  grid-template-columns: 2fr 4fr 10fr;
   
   
 }
@@ -9,6 +9,7 @@
 .dialogItems a{
   color: black;
   text-decoration: none;
+
   
 }
 
@@ -47,15 +48,18 @@
 
 .dialogLastMessage {
   overflow: hidden;
+  white-space: nowrap;
   max-height: 40px;
-  max-width: 300px;
+  max-width: 150px;
+  width: 100%;
 }
 
 .messages {
-  height: 60%;
+  height: 100%;
   width: 94%;
-  width: 500px;
-  height: 700px;
+  min-height: 500px;
+  max-width: 500px;
+  max-height: 700px;
   padding: 10px;
   background-color: white;
   overflow: auto;
@@ -66,6 +70,7 @@
 
 .message {
   width: 100%;
+  min-width: 10%;
   float: left; 
   border: thin;
   margin-top: 5px;
@@ -90,8 +95,9 @@
 }
 
 .messageFromMe {
+  word-break: break-all;
   padding: 10px;
-  min-width: 30%;
+  min-width: 10%;
   max-width: 80%;
   float: right;
   background-color: palegreen ;

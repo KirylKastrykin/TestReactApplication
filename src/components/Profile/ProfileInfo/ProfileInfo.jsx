@@ -37,7 +37,7 @@ class ProfileInfo extends React.Component {
             <div>
                 <div className={classes.avatarBlock}>
                     <div>
-                        <img src={require('./../../Assets/profileInfoAvatar.jpg')} className={classes.avatar} />
+                        <img src={require('./../../Assets/profileInfoAvatar.png')} className={classes.avatar} />
                     </div>
                     <div className={classes.aboutMe}>
                         <div><h1>My Name</h1></div>

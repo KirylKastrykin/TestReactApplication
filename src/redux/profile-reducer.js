@@ -12,7 +12,7 @@ let initialState = {
         { id: 4, message: 'Hey4', likeCount: 10, wasLiked: false }
     ],
     newPostText: "",
-    statusText: "Hello"
+    statusText: "Simpe status (Double Click to write something else)"
 }
 
 let profileReducer = (state = initialState, action) => {

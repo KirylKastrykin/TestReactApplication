@@ -19,7 +19,7 @@ const LastMessage = (props) => {
     }
 
     return (
-        <div>Last message: {findLastMessage()}</div>
+        <div>{findLastMessage()}</div>
     )
 }
 
