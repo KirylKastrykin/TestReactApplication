@@ -20,7 +20,7 @@ let profileReducer = (state = initialState, action) => {
         case ADD_POST:
             return {
                 ...state,
-                posts: [...state.posts, { id: state.posts[state.posts.length - 1].id + 1, message: state.newPostText, likeCount: 0 }],
+                posts: [...state.posts, { id: state.posts[state.posts.length - 1].id + 1, message: state.newPostText, likeCount: 0, wasLiked: false}],
                 newPostText: ""
             }
         case CHANGE_NEW_POST_TEXT:
