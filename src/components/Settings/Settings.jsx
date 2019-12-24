@@ -9,12 +9,16 @@ const Settings = (props) => {
     let buttonName = props.isDarkTheme ? "Ruin USSR Component" : "Return USSR Component";
 
     return (
-        <div>
-            <span>UI Super Secret React Component</span>
-            <div>
-                <button onClick={handleClick}>{buttonName}</button>
+
+        <div className={classes.settingsBody}>
+            <div className={classes.settingsContent}>
+                <span>UI Super Secret React Component</span>
+                <div>
+                    <button className={classes.settingsButton} onClick={handleClick}>{buttonName}</button>
+                </div>
             </div>
         </div>
+
 
     )
 }

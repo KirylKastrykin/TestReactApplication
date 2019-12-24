@@ -11,8 +11,6 @@ const MyPosts = (props) => {
 
     let newPostElement = React.createRef();
 
-
-
     let onAddPost = () => {
         let text = newPostElement.current.value;
         if (text) {
@@ -34,7 +32,7 @@ const MyPosts = (props) => {
                     <textarea className={classes.profileTextarea} placeholder="Don't!" onChange={onPostChange} ref={newPostElement} value={props.newPostText} />
                 </div>
                 <div>
-                    <button onClick={onAddPost}>Add Post</button>
+                    <button className={classes.addPostButton} onClick={onAddPost}>Add Post</button>
                 </div>
             </div>
             <div className={classes.posts}>

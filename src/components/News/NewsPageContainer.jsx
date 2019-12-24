@@ -9,14 +9,12 @@ import { connect } from 'react-redux';
 let mapStateToProps = (state) => {
 
     return {
-
         newsData: state.newsPage.news,
     }
 }
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        
     }
 }
 

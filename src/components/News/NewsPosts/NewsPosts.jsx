@@ -15,15 +15,13 @@ const NewsPosts = (props) => {
         props.wasLiked ? onUnLike() : onAddLike();
     }
 
-
-
     return (
         <div>
             <div>
                 <h3>
                     <img className={classes.itemIcon} src={require("./../../Assets/postUserIcon.jpg")}></img>
                     {props.header}
-                    
+
                 </h3>
                 <div><h5>Author: {props.author}</h5></div>
                 <span>{props.message}</span>

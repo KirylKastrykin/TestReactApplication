@@ -6,7 +6,9 @@ class Navbar extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { isOpened: false };
+        this.state = {
+            isOpened: false,
+        };
     }
 
     toggleState() {
@@ -40,11 +42,10 @@ class Navbar extends React.Component {
         }
 
 
-
         return (
 
             <nav className={classes.nav}>
-                <div >
+                <div>
                     <img onClick={this.toggleState.bind(this)} align="left" className={classes.dropDownIcon} src={require("./../Assets/navBarDropDownIcon.png")} >
                     </img>
                     <br clear="left"></br>

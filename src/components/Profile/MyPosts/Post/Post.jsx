@@ -23,7 +23,6 @@ const Post = (props) => {
             <div>
                 <img onClick={checkLike} className={classes.likeIcon} src={props.wasLiked ? require("./../../../Assets/likedIcon.png") : require("./../../../Assets/notLikedIcon.png")} />
                 <span> {props.likeCount} </span>
-
             </div>
         </div>
     )

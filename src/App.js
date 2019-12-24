@@ -25,7 +25,8 @@ function App(props) {
 
   return (
 
-    <div className={appItemsClass}> <Header />
+    <div className={appItemsClass}> 
+    <Header />
     <Navbar />
 
     <div className='app-wrapper-content'>

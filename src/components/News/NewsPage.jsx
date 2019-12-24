@@ -11,16 +11,15 @@ class NewsPage extends React.Component {
     }
     render() {
 
-        let newsElements = this.props.newsData.map((news) => <NewsPostsContainer id={news.id} message={news.message} likeCount={news.likeCount} author={news.author} wasLiked={news.wasLiked} header={news.header}/>);
+        let newsElements = this.props.newsData.map((news) => <NewsPostsContainer id={news.id} message={news.message} likeCount={news.likeCount} author={news.author} wasLiked={news.wasLiked} header={news.header} />);
 
         return (
             <div>
-                <div>                    
-                    <button onClick={(e) => this.setState({ isOpen: true })}>Add news post</button>
-                    <AddNewsContainer isOpen={this.state.isOpen} onClose={(e) => this.setState({ isOpen: false })} />
+                <div>
+                    <button className={classes.addNewsButton} onClick={(e) => this.setState({ isAddNewsOpen: true })}>+</button>
+                    <AddNewsContainer isAddNewsOpen={this.state.isAddNewsOpen} onClose={(e) => this.setState({ isAddNewsOpen: false })} />
                     {newsElements}
                 </div>
-
             </div>
         )
     }

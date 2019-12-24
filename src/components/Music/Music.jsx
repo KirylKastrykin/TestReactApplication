@@ -146,7 +146,7 @@ class Music extends React.Component {
 
         return (
             <>
-                <h1>My Little Player</h1>
+                <h1>Music</h1>
                 <div className="player">
                     <ul className="tracklist">{list}</ul>
                     <TimeBar
@@ -158,20 +158,20 @@ class Music extends React.Component {
                         <div className="buttons">
                             <button onClick={() => this.handleSkip("previous")}>
                                 Previous
-                  </button>
+                            </button>
                             {this.state.player === "paused" && (
                                 <button onClick={() => this.setState({ player: "playing" })}>
                                     Play
-                    </button>
+                                </button>
                             )}
                             {this.state.player === "playing" && (
                                 <button onClick={() => this.setState({ player: "paused" })}>
                                     Pause
-                    </button>
+                                </button>
                             )}
                             <button onClick={() => this.setState({ player: "stopped" })}>
                                 Stop
-                  </button>
+                            </button>
                             <button onClick={() => this.handleSkip("next")}>Skip</button>
                         </div>
                     )}

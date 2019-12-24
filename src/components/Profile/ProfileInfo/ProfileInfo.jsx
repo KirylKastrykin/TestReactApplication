@@ -10,16 +10,12 @@ class ProfileInfo extends React.Component {
         status: this.props.statusText
     }
 
-
-
     statusHandler = () => {
         this.setState({
             statusSwitch: !this.state.statusSwitch
         })
 
     }
-
-
 
     onStatusChange = (e) => {
         this.setState({
@@ -29,9 +25,6 @@ class ProfileInfo extends React.Component {
     }
 
     render() {
-
-
-
 
         return (
             <div>

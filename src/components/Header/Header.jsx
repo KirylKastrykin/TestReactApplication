@@ -7,7 +7,6 @@ const Header = () => {
         <header className={classes.header}>
             <img src={require('./../Assets/header-bg.png')}></img>
         </header>
-
     )
 }
 

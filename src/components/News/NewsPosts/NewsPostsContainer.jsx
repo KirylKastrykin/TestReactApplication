@@ -7,7 +7,6 @@ import NewsPosts from './NewsPosts';
 let mapStateToProps = (state) => {
 
     return {
-
         newsData: state.newsPage.news,
         newPostText: state.newsPage.newNewsText
     }

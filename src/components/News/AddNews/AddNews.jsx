@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classes from './AddNews.module.css'
 
 
 let AddNews = (props) => {
-
 
     let newsTextElement = React.createRef();
     let newsHeaderElement = React.createRef();
@@ -11,13 +10,11 @@ let AddNews = (props) => {
     let onNewsTextChange = () => {
         let text = newsTextElement.current.value;
         props.changeNewNewsText(text);
-        console.log(text);
     }
 
     let onNewsHeaderChange = () => {
         let text = newsHeaderElement.current.value;
         props.changeNewNewsHeader(text);
-        console.log(text);
     }
 
     let isValid = () => {
@@ -31,36 +28,55 @@ let AddNews = (props) => {
 
     let onAddNews = () => {
 
-        if (isValid() == true) {
-            debugger;
+        if (isValid()) {
             props.addNews();
             props.onClose();
         }
     }
 
+    let closeForm = () => {
+        props.onClose();
+        props.changeNewNewsHeader("");
+        props.changeNewNewsText("");
+
+    }
+
+    let isButtonValid = () => {
+        if (props.newNewsText == "" || props.newNewsHeader == "") {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
     return (
         <>
-            {props.isOpen ?
-                
+            {props.isAddNewsOpen ?
+                <form>
                     <div className={classes.addNewsPost}>
-                        <div><button className={classes.addNewsPostCloseButtonStyles} onClick={props.onClose}>x</button></div>
+                        <div>
+                            <button className={classes.addNewsPostCloseButtonStyles} onClick={closeForm}>x</button>
+                        </div>
+
                         <div>
                             <h3>News header: <input className={classes.addNewsInput} onChange={onNewsHeaderChange} ref={newsHeaderElement} value={props.newNewsHeader}></input></h3>
+                        </div>
+
+                        <div>
+                            <span>News text: <textarea placeholder="Do it!" className={classes.addNewsTextArea} onChange={onNewsTextChange} ref={newsTextElement} value={props.newNewsText} ></textarea></span>
+                        </div>
+
+                        <div>
 
                         </div>
-                        <div>
-                            <span>News text: <textarea placeholder="Don't!" className={classes.addNewsTextArea} onChange={onNewsTextChange} ref={newsTextElement} value={props.newNewsText} ></textarea></span>
 
-
-                        </div>
                         <div>
-
-                        </div>
-                        <div>
-                            <div className={classes.footer}><button className={classes.addButton} onClick={onAddNews}>1</button><button className={classes.cancelButton} onClick={props.onClose}>2</button></div>
+                            <div className={classes.footer}><button disabled={isButtonValid()} className={classes.addButton} onClick={onAddNews}>Submit</button><button className={classes.cancelButton} onClick={closeForm}>Cancel</button></div>
                         </div>
                     </div>
-            
+                </form>
+
                 :
                 null
             }

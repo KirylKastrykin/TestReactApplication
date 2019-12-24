@@ -58,7 +58,7 @@ const Dialogs = (props) => {
                                 <textarea className={classes.dialogTextArea} onKeyPress={checkPressedKey} placeholder='Enter message. Ctrl + Enter to send' onChange={onMessageChange} ref={newMessageRef} value={props.newMessageText}></textarea>
                             </div>
                             <div align="right" >
-                                <button onClick={sendMessage}>Send</button>
+                                <button className={classes.sendButton} onClick={sendMessage}>Send</button>
                             </div>
                         </div>
                     </div>

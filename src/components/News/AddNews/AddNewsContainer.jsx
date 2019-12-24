@@ -8,7 +8,6 @@ import { addNewsActionCreater, changeNewNewsTextActionCreater, changeNewNewsHead
 let mapStateToProps = (state) => {
 
     return {
-
         newsData: state.newsPage.news,
         newNewsText: state.newsPage.newNewsText,
         newNewsHeader: state.newsPage.newNewsHeader
